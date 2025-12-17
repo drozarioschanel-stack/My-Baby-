@@ -1,0 +1,60 @@
+// Typing message
+const message = "I love you more than anything, Kane ❤️";
+let i = 0;
+
+function typeMessage() {
+    if (i < message.length) {
+        document.getElementById("techMessage").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeMessage, 80);
+    } else {
+        document.getElementById("loveButton").classList.remove("hidden");
+    }
+}
+
+typeMessage();
+
+
+// First Click Me → show countdown
+document.getElementById("loveButton").addEventListener("click", function () {
+    document.getElementById("countdownContainer").classList.remove("hidden");
+    startCountdown();
+
+    // After showing countdown → reveal second button
+    setTimeout(() => {
+        document.getElementById("secondClick").classList.remove("hidden");
+    }, 1500);
+});
+
+
+// Countdown function
+function startCountdown() {
+    const targetDate = new Date("2026-01-18T12:00:00"); // auto-updates daily at 12
+
+    function updateCountdown() {
+        const now = new Date();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+            document.getElementById("countdownTimer").innerHTML = "Today is the day ❤️";
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("countdownTimer").innerHTML =
+            `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+}
+
+
+// Second Click → show quotes
+document.getElementById("secondClick").addEventListener("click", function () {
+    document.getElementById("quoteSection").classList.remove("hidden");
+});

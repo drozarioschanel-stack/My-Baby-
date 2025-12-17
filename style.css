@@ -1,0 +1,106 @@
+/* Body + Background */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #ffb3c6, #ff6680);
+    overflow-x: hidden;
+    font-family: 'Dancing Script', 'Georgia', serif; 
+    color: white;
+}
+
+/* Main container */
+.container {
+    position: relative;
+    margin: 50px auto;
+    text-align: center;
+    width: 90%;
+    max-width: 420px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+/* Typing message */
+.tech-message {
+    white-space: pre-wrap;
+    margin-top: 20px;
+    font-family: 'Dancing Script', 'Courier New', monospace;
+    font-size: 16px;
+    color: #ffe6ea;
+    text-align: center;
+}
+
+/* Falling hearts + emojis + S+K */
+#heartRain .heart {
+    position: fixed;
+    top: -20px;
+    font-size: 24px;
+    animation: fall linear forwards;
+    user-select: none;
+    pointer-events: none;
+    color: white;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+        opacity: 0;
+    }
+}
+
+/* Buttons */
+.love-btn {
+    background: #ff5f8f;
+    color: white;
+    padding: 15px 25px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.love-btn:hover {
+    background: #ff2d6b;
+}
+
+/* Countdown */
+.countdown {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 200, 220, 0.4);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 22px;
+    backdrop-filter: blur(4px);
+}
+
+/* ❤️ Love Letter Section */
+#loveLetterSection {
+    margin: 30px auto;
+    width: 90%;
+    max-width: 420px;
+    padding: 25px;
+    background: rgba(255, 200, 215, 0.35);
+    border-radius: 15px;
+    font-size: 20px;
+    color: white;
+    line-height: 1.7;
+    backdrop-filter: blur(6px);
+    animation: fadeIn 1s ease forwards;
+    text-align: center;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
