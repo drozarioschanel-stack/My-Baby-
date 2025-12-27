@@ -66,7 +66,7 @@ loveButton.addEventListener("click", function () {
 });
 
 // --- Countdown (based on local time, day ends at 12 AM local) ---
-const targetDateLocal = new Date("January 19, 2026 05:30:00");
+const targetDateLocal = new Date("January 10, 2026 05:30:00");
 
 function updateCountdown() {
     const now = new Date();
